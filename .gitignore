@@ -10,3 +10,4 @@ wheels/
 .venv
 .env
 .lock
+phi3-payments-finetuned/

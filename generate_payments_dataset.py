@@ -71,9 +71,15 @@ class PaymentsDatasetGenerator:
         return round(random.uniform(min_amount, max_amount), 2)
     
     def generate_date(self, days_back=180):
-        """Generate random date within past N days"""
-        days_ago = random.randint(0, days_back)
-        date = datetime.now() - timedelta(days=days_ago)
+        """Generate random date within past N days (or future if negative)"""
+        if days_back < 0:
+            # Generate future date
+            days_ahead = random.randint(0, abs(days_back))
+            date = datetime.now() + timedelta(days=days_ahead)
+        else:
+            # Generate past date
+            days_ago = random.randint(0, days_back)
+            date = datetime.now() - timedelta(days=days_ago)
         return date.strftime('%Y-%m-%d')
     
     def generate_processing_time(self):

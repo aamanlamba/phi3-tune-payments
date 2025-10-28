@@ -78,6 +78,7 @@ def load_model_and_tokenizer():
         device_map="auto",
         trust_remote_code=True,
         torch_dtype=torch.float16,
+        use_cache=False,  # Disable KV cache for training
     )
     
     # Prepare model for k-bit training

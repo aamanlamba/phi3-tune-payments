@@ -427,5 +427,3 @@ Having issues? Check:
 4. [NVIDIA CUDA toolkit](https://developer.nvidia.com/cuda-downloads)
 
 ---
-
-**Ready to customize for your specific use case?** Start by modifying the dataset generator to match your payment data structure!

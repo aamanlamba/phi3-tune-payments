@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"q:\\models\\phi3-tune-payments\\venv\\Scripts\\pip.exe\" install --upgrade \"transformers>=4.41.0\")",
+      "Bash(\"q:\\models\\phi3-tune-payments\\venv\\Scripts\\python.exe\":*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

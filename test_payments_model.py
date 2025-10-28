@@ -30,13 +30,14 @@ def load_model():
         torch_dtype=torch.float16,
         device_map="auto",
         trust_remote_code=True,
+        attn_implementation="eager",  # Use eager attention to avoid cache issues
     )
     
     # Load LoRA weights
     model = PeftModel.from_pretrained(model, MODEL_PATH)
     model.eval()
     
-    print("✓ Model loaded successfully\n")
+    print("[OK] Model loaded successfully\n")
     return model, tokenizer
 
 def generate_response(model, tokenizer, meaning_representation: str, max_new_tokens: int = 150):
@@ -61,6 +62,7 @@ Convert the following structured payment information into a natural explanation:
             top_p=0.9,
             do_sample=True,
             pad_token_id=tokenizer.eos_token_id,
+            use_cache=False,  # Disable KV cache to avoid API issues
         )
     
     # Decode and extract only the assistant's response
@@ -176,6 +178,7 @@ def compare_with_base_model(model, tokenizer):
         torch_dtype=torch.float16,
         device_map="auto",
         trust_remote_code=True,
+        attn_implementation="eager",  # Use eager attention to avoid cache issues
     )
     base_model.eval()
     
@@ -194,7 +197,7 @@ def main():
     try:
         model, tokenizer = load_model()
     except Exception as e:
-        print(f"❌ Error loading model: {str(e)}")
+        print(f"[ERROR] Error loading model: {str(e)}")
         print("\nMake sure you've completed training first:")
         print("  python finetune_phi3_payments.py")
         return
