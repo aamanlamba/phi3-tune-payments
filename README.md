@@ -63,6 +63,13 @@ nvidia-smi
 
 ## 🚀 Quick Start (30 minutes)
 
+> **📌 Note:** This guide is for the **forward model** (structured → natural language).
+> For the **reverse model** (natural language → structured), see:
+> ```bash
+> git checkout reverse-structured-extraction
+> # Then read README_REVERSE.md
+> ```
+
 ### Step 1: Clone or Download Files
 
 ```bash
