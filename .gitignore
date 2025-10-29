@@ -11,3 +11,9 @@ wheels/
 .env
 .lock
 phi3-payments-finetuned/
+GITHUB_INTEGRATION.md
+GITHUB_README.md
+HF)README.md
+.gitignore
+HUGGINGFACE_GUIDE.md
+PUBLISH_SUMMARY.md
