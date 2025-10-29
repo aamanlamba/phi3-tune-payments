@@ -1,0 +1,202 @@
+[
+  {
+    "input": "A transaction fee of GBP 742.88 (2.28%) has been applied to your transaction of GBP 32,623.88 on 2025-06-27.",
+    "output": "inform(transaction_type[fee], fee_type[transaction_fee], fee_amount[742.88], base_amount[32623.88], currency[GBP], date[2025-06-27])"
+  },
+  {
+    "input": "The international transfer of JPY 25,187.99 to XYZ Vendor will be converted to USD 44,585.26 at an exchange rate of 1.7701. A transfer fee of JPY 503.76 applies. The transfer should complete within 7-10 business days.",
+    "output": "inform(transaction_type[international_transfer], amount_sent[25187.99], currency_from[JPY], amount_received[44585.26], currency_to[USD], exchange_rate[1.7701], fee[503.76], sender[Enterprise Solutions], receiver[XYZ Vendor], processing_time[7-10_business_days])"
+  },
+  {
+    "input": "A late payment fee of USD 1,537.71 (4.33%) has been applied to your transaction of USD 35,519.61 on 2025-10-13.",
+    "output": "inform(transaction_type[fee], fee_type[late_payment_fee], fee_amount[1537.71], base_amount[35519.61], currency[USD], date[2025-10-13])"
+  },
+  {
+    "input": "The chargeback claim for EUR 3,893.50 from TechGadgets Store has been approved. The funds will be returned to your account within 3-5 business days.",
+    "output": "alert(transaction_type[chargeback], amount[3893.5], currency[EUR], merchant[TechGadgets Store], reason[unauthorized_transaction], status[approved])"
+  },
+  {
+    "input": "The payment of USD 9,020.81 to CloudTech Systems via debit card was declined due to authentication failed. Please verify your payment information and try again.",
+    "output": "alert(transaction_type[payment], amount[9020.81], currency[USD], receiver[CloudTech Systems], method[debit_card], status[failed], reason[authentication_failed])"
+  },
+  {
+    "input": "Your payment of GBP 6,474.78 to MegaMart via check was declined due to authentication failed. Please verify your payment information and try again.",
+    "output": "alert(transaction_type[payment], amount[6474.78], currency[GBP], receiver[MegaMart], method[check], status[failed], reason[authentication_failed])"
+  },
+  {
+    "input": "Your full refund of USD 6,214.85 from XYZ Vendor is being processed and should appear in your account within 1-2 business days.",
+    "output": "inform(transaction_type[refund], original_amount[6214.85], refund_amount[6214.85], currency[USD], merchant[XYZ Vendor], refund_type[full], processing_time[1-2_business_days])"
+  },
+  {
+    "input": "Your partial refund of CAD 5,660.93 (from your original CAD 6,877.60 purchase) from Digital Solutions Co is being processed and should arrive within instant.",
+    "output": "inform(transaction_type[refund], original_amount[6877.6], refund_amount[5660.93], currency[CAD], merchant[Digital Solutions Co], refund_type[partial], processing_time[instant])"
+  },
+  {
+    "input": "Your international transfer of GBP 57,134.45 to Retail Plus will be converted to AUD 65,207.55 at an exchange rate of 1.1413. A transfer fee of GBP 1,142.69 applies. The transfer should complete within 7-10 business days.",
+    "output": "inform(transaction_type[international_transfer], amount_sent[57134.45], currency_from[GBP], amount_received[65207.55], currency_to[AUD], exchange_rate[1.1413], fee[1142.69], sender[ABC Company], receiver[Retail Plus], processing_time[7-10_business_days])"
+  },
+  {
+    "input": "Your international transfer of EUR 98,049.17 to Swift Logistics will be converted to CAD 69,634.52 at an exchange rate of 0.7102. A transfer fee of EUR 1,960.98 applies. The transfer should complete within 7-10 business days.",
+    "output": "inform(transaction_type[international_transfer], amount_sent[98049.17], currency_from[EUR], amount_received[69634.52], currency_to[CAD], exchange_rate[0.7102], fee[1960.98], sender[Acme Corp], receiver[Swift Logistics], processing_time[7-10_business_days])"
+  },
+  {
+    "input": "Your PayPal payment of JPY 10,859.32 to Enterprise Solutions was successfully completed on 2025-10-14.",
+    "output": "inform(transaction_type[payment], amount[10859.32], currency[JPY], sender[XYZ Vendor], receiver[Enterprise Solutions], status[completed], method[PayPal], date[2025-10-14])"
+  },
+  {
+    "input": "Your international transfer of USD 55,519.49 to Global Supplies Inc will be converted to EUR 44,870.85 at an exchange rate of 0.8082. A transfer fee of USD 1,110.39 applies. The transfer should complete within 7-10 business days.",
+    "output": "inform(transaction_type[international_transfer], amount_sent[55519.49], currency_from[USD], amount_received[44870.85], currency_to[EUR], exchange_rate[0.8082], fee[1110.39], sender[MegaMart], receiver[Global Supplies Inc], processing_time[7-10_business_days])"
+  },
+  {
+    "input": "A wire transfer fee of CAD 656.41 (2.72%) has been applied to your transaction of CAD 24,153.15 on 2025-07-14.",
+    "output": "inform(transaction_type[fee], fee_type[wire_transfer_fee], fee_amount[656.41], base_amount[24153.15], currency[CAD], date[2025-07-14])"
+  },
+  {
+    "input": "We're processing your AUD 1,142.76 payment to Retail Plus. The transaction should be completed shortly.",
+    "output": "inform(transaction_type[payment], amount[1142.76], currency[AUD], sender[Digital Solutions Co], receiver[Retail Plus], status[processing], method[check], date[2025-06-24])"
+  },
+  {
+    "input": "Your payment of AUD 15,006.26 to XYZ Vendor via PayPal is currently pending and should be completed within 1-2 business days.",
+    "output": "inform(transaction_type[payment], amount[15006.26], currency[AUD], sender[CloudTech Systems], receiver[XYZ Vendor], status[pending], method[PayPal], date[2025-05-25])"
+  },
+  {
+    "input": "Your international transfer of AUD 55,560.88 to TechGadgets Store will be converted to EUR 28,930.55 at an exchange rate of 0.5207. A transfer fee of AUD 1,111.22 applies. The transfer should complete within instant.",
+    "output": "inform(transaction_type[international_transfer], amount_sent[55560.88], currency_from[AUD], amount_received[28930.55], currency_to[EUR], exchange_rate[0.5207], fee[1111.22], sender[Premier Services LLC], receiver[TechGadgets Store], processing_time[instant])"
+  },
+  {
+    "input": "The payment of AUD 6,782.78 to ABC Company via credit card was declined due to card declined. Please verify your payment information and try again.",
+    "output": "alert(transaction_type[payment], amount[6782.78], currency[AUD], receiver[ABC Company], method[credit_card], status[failed], reason[card_declined])"
+  },
+  {
+    "input": "Your international transfer of AUD 74,162.00 to TechGadgets Store will be converted to EUR 40,210.64 at an exchange rate of 0.5422. A transfer fee of AUD 1,483.24 applies. The transfer should complete within 1-2 business days.",
+    "output": "inform(transaction_type[international_transfer], amount_sent[74162.0], currency_from[AUD], amount_received[40210.64], currency_to[EUR], exchange_rate[0.5422], fee[1483.24], sender[Enterprise Solutions], receiver[TechGadgets Store], processing_time[1-2_business_days])"
+  },
+  {
+    "input": "Your international transfer of AUD 17,385.89 to ABC Company will be converted to JPY 32,972.34 at an exchange rate of 1.8965. A transfer fee of AUD 347.72 applies. The transfer should complete within 7-10 business days.",
+    "output": "inform(transaction_type[international_transfer], amount_sent[17385.89], currency_from[AUD], amount_received[32972.34], currency_to[JPY], exchange_rate[1.8965], fee[347.72], sender[Enterprise Solutions], receiver[ABC Company], processing_time[7-10_business_days])"
+  },
+  {
+    "input": "Your direct debit payment of GBP 20,812.34 to TechGadgets Store was successfully completed on 2025-08-17.",
+    "output": "inform(transaction_type[payment], amount[20812.34], currency[GBP], sender[Swift Logistics], receiver[TechGadgets Store], status[completed], method[direct_debit], date[2025-08-17])"
+  },
+  {
+    "input": "After review, your chargeback request for EUR 3,834.79 from Retail Plus has been denied. The merchant provided sufficient evidence that the transaction was valid.",
+    "output": "alert(transaction_type[chargeback], amount[3834.79], currency[EUR], merchant[Retail Plus], reason[product_not_as_described], status[denied])"
+  },
+  {
+    "input": "A international transfer fee of CAD 2,157.56 (4.50%) was applied to your transaction of CAD 47,927.80 on 2025-07-13.",
+    "output": "inform(transaction_type[fee], fee_type[international_transfer_fee], fee_amount[2157.56], base_amount[47927.8], currency[CAD], date[2025-07-13])"
+  },
+  {
+    "input": "Your debit card payment of EUR 9,229.53 to Enterprise Solutions was successfully completed on 2025-07-11.",
+    "output": "inform(transaction_type[payment], amount[9229.53], currency[EUR], sender[XYZ Vendor], receiver[Enterprise Solutions], status[completed], method[debit_card], date[2025-07-11])"
+  },
+  {
+    "input": "A chargeback fee of CAD 56.53 (1.73%) has been applied to your transaction of CAD 3,269.74 on 2025-08-09.",
+    "output": "inform(transaction_type[fee], fee_type[chargeback_fee], fee_amount[56.53], base_amount[3269.74], currency[CAD], date[2025-08-09])"
+  },
+  {
+    "input": "Your chargeback claim for USD 932.51 from XYZ Vendor was approved. The funds will be returned to your account within 3-5 business days.",
+    "output": "alert(transaction_type[chargeback], amount[932.51], currency[USD], merchant[XYZ Vendor], reason[product_not_received], status[approved])"
+  },
+  {
+    "input": "Your direct debit payment of EUR 20,271.78 to Acme Corp was successfully completed on 2025-06-23.",
+    "output": "inform(transaction_type[payment], amount[20271.78], currency[EUR], sender[MegaMart], receiver[Acme Corp], status[completed], method[direct_debit], date[2025-06-23])"
+  },
+  {
+    "input": "A transaction fee of USD 1,390.81 (4.66%) has been applied to your transaction of USD 29,834.27 on 2025-08-15.",
+    "output": "inform(transaction_type[fee], fee_type[transaction_fee], fee_amount[1390.81], base_amount[29834.27], currency[USD], date[2025-08-15])"
+  },
+  {
+    "input": "The payment of AUD 9,048.75 to MegaMart via debit card is currently pending and should be completed within 1-2 business days.",
+    "output": "inform(transaction_type[payment], amount[9048.75], currency[AUD], sender[Global Supplies Inc], receiver[MegaMart], status[pending], method[debit_card], date[2025-10-12])"
+  },
+  {
+    "input": "We are processing your USD 778.85 payment to XYZ Vendor. The transaction should be completed shortly.",
+    "output": "inform(transaction_type[payment], amount[778.85], currency[USD], sender[Global Supplies Inc], receiver[XYZ Vendor], status[processing], method[credit_card], date[2025-05-02])"
+  },
+  {
+    "input": "Your payment of JPY 20,235.88 to Premier Services LLC via ACH is currently pending and will be completed within 1-2 business days.",
+    "output": "inform(transaction_type[payment], amount[20235.88], currency[JPY], sender[MegaMart], receiver[Premier Services LLC], status[pending], method[ACH], date[2025-05-15])"
+  },
+  {
+    "input": "We're processing your JPY 8,054.04 payment to Digital Solutions Co. The transaction should be completed shortly.",
+    "output": "inform(transaction_type[payment], amount[8054.04], currency[JPY], sender[TechGadgets Store], receiver[Digital Solutions Co], status[processing], method[check], date[2025-06-22])"
+  },
+  {
+    "input": "Your payment of JPY 6,870.00 to Swift Logistics via wire transfer was declined due to invalid card number. Please verify your payment information and try again.",
+    "output": "alert(transaction_type[payment], amount[6870.0], currency[JPY], receiver[Swift Logistics], method[wire_transfer], status[failed], reason[invalid_card_number])"
+  },
+  {
+    "input": "Your wire transfer payment of CAD 7,295.61 to Retail Plus was successfully completed on 2025-05-28.",
+    "output": "inform(transaction_type[payment], amount[7295.61], currency[CAD], sender[Swift Logistics], receiver[Retail Plus], status[completed], method[wire_transfer], date[2025-05-28])"
+  },
+  {
+    "input": "Your cryptocurrency payment of JPY 22,829.56 to Acme Corp was successfully completed on 2025-05-29.",
+    "output": "inform(transaction_type[payment], amount[22829.56], currency[JPY], sender[Retail Plus], receiver[Acme Corp], status[completed], method[cryptocurrency], date[2025-05-29])"
+  },
+  {
+    "input": "The PayPal payment of EUR 21,286.67 to TechGadgets Store was successfully completed on 2025-10-15.",
+    "output": "inform(transaction_type[payment], amount[21286.67], currency[EUR], sender[Digital Solutions Co], receiver[TechGadgets Store], status[completed], method[PayPal], date[2025-10-15])"
+  },
+  {
+    "input": "Your monthly subscription payment of EUR 185.79 to Global Supplies Inc is active. Your next payment will be processed on 2025-11-15.",
+    "output": "inform(transaction_type[recurring_payment], amount[185.79], currency[EUR], merchant[Global Supplies Inc], frequency[monthly], next_payment_date[2025-11-15], status[active])"
+  },
+  {
+    "input": "Your payment of CAD 7,934.14 to Enterprise Solutions via ACH was declined due to card declined. Please verify your payment information and try again.",
+    "output": "alert(transaction_type[payment], amount[7934.14], currency[CAD], receiver[Enterprise Solutions], method[ACH], status[failed], reason[card_declined])"
+  },
+  {
+    "input": "Your international transfer of USD 89,191.14 to Digital Solutions Co will be converted to EUR 119,400.18 at an exchange rate of 1.3387. A transfer fee of USD 1,783.82 applies. The transfer should complete within instant.",
+    "output": "inform(transaction_type[international_transfer], amount_sent[89191.14], currency_from[USD], amount_received[119400.18], currency_to[EUR], exchange_rate[1.3387], fee[1783.82], sender[XYZ Vendor], receiver[Digital Solutions Co], processing_time[instant])"
+  },
+  {
+    "input": "Your payment of AUD 17,164.38 to Global Supplies Inc via wire transfer is currently pending and will be completed within 1-2 business days.",
+    "output": "inform(transaction_type[payment], amount[17164.38], currency[AUD], sender[CloudTech Systems], receiver[Global Supplies Inc], status[pending], method[wire_transfer], date[2025-10-14])"
+  },
+  {
+    "input": "After review, your chargeback request for USD 1,854.87 from XYZ Vendor has been denied. The merchant provided sufficient evidence that the transaction was valid.",
+    "output": "alert(transaction_type[chargeback], amount[1854.87], currency[USD], merchant[XYZ Vendor], reason[service_not_rendered], status[denied])"
+  },
+  {
+    "input": "Your annually subscription payment of AUD 201.82 to Digital Solutions Co has been cancelled. You will not be charged on 2025-11-08.",
+    "output": "inform(transaction_type[recurring_payment], amount[201.82], currency[AUD], merchant[Digital Solutions Co], frequency[annually], next_payment_date[2025-11-08], status[cancelled])"
+  },
+  {
+    "input": "Your partial refund of EUR 1,352.18 (from your original EUR 1,688.67 purchase) from ABC Company is being processed and should arrive within 1-2 business days.",
+    "output": "inform(transaction_type[refund], original_amount[1688.67], refund_amount[1352.18], currency[EUR], merchant[ABC Company], refund_type[partial], processing_time[1-2_business_days])"
+  },
+  {
+    "input": "Your PayPal payment of EUR 3,009.34 to Premier Services LLC was successfully completed on 2025-05-19.",
+    "output": "inform(transaction_type[payment], amount[3009.34], currency[EUR], sender[TechGadgets Store], receiver[Premier Services LLC], status[completed], method[PayPal], date[2025-05-19])"
+  },
+  {
+    "input": "Your international transfer of USD 87,873.87 to ABC Company will be converted to JPY 54,481.80 at an exchange rate of 0.62. A transfer fee of USD 1,757.48 applies. The transfer should complete within instant.",
+    "output": "inform(transaction_type[international_transfer], amount_sent[87873.87], currency_from[USD], amount_received[54481.8], currency_to[JPY], exchange_rate[0.62], fee[1757.48], sender[Digital Solutions Co], receiver[ABC Company], processing_time[instant])"
+  },
+  {
+    "input": "Your international transfer of EUR 92,802.74 to MegaMart will be converted to AUD 55,941.49 at an exchange rate of 0.6028. A transfer fee of EUR 1,856.05 applies. The transfer should complete within 3-5 business days.",
+    "output": "inform(transaction_type[international_transfer], amount_sent[92802.74], currency_from[EUR], amount_received[55941.49], currency_to[AUD], exchange_rate[0.6028], fee[1856.05], sender[Retail Plus], receiver[MegaMart], processing_time[3-5_business_days])"
+  },
+  {
+    "input": "Your quarterly subscription to Global Supplies Inc (GBP 36.63) is currently paused. No payment will be processed on 2025-11-20.",
+    "output": "inform(transaction_type[recurring_payment], amount[36.63], currency[GBP], merchant[Global Supplies Inc], frequency[quarterly], next_payment_date[2025-11-20], status[paused])"
+  },
+  {
+    "input": "The payment of CAD 12,531.07 to Enterprise Solutions via direct debit was declined due to exceeded limit. Please verify your payment information and try again.",
+    "output": "alert(transaction_type[payment], amount[12531.07], currency[CAD], receiver[Enterprise Solutions], method[direct_debit], status[failed], reason[exceeded_limit])"
+  },
+  {
+    "input": "Your check payment of CAD 14,749.17 to Swift Logistics was successfully completed on 2025-08-04.",
+    "output": "inform(transaction_type[payment], amount[14749.17], currency[CAD], sender[Digital Solutions Co], receiver[Swift Logistics], status[completed], method[check], date[2025-08-04])"
+  },
+  {
+    "input": "Your payment of GBP 9,744.05 to CloudTech Systems via ACH was declined due to exceeded limit. Please verify your payment information and try again.",
+    "output": "alert(transaction_type[payment], amount[9744.05], currency[GBP], receiver[CloudTech Systems], method[ACH], status[failed], reason[exceeded_limit])"
+  },
+  {
+    "input": "We're processing your CAD 21,203.13 payment to Swift Logistics. The transaction should be completed shortly.",
+    "output": "inform(transaction_type[payment], amount[21203.13], currency[CAD], sender[Digital Solutions Co], receiver[Swift Logistics], status[processing], method[ACH], date[2025-05-24])"
+  }
+]
