@@ -1,25 +1,48 @@
 # Phi-3 Fine-tuning for Payments Domain
 
-Fine-tune Microsoft's Phi-3-Mini model to generate natural language descriptions of payment transactions using LoRA (Low-Rank Adaptation).
+Fine-tune Microsoft's Phi-3-Mini model for payment transaction processing using LoRA (Low-Rank Adaptation).
+
+**Two Models Available:**
+- **Forward Model** (main branch): Structured data → Natural language descriptions
+- **Reverse Model** (reverse-structured-extraction branch): Natural language → Structured metadata
 
 **Optimized for**: NVIDIA RTX 3060 (12GB VRAM)
 
 ## 🎯 What This Does
 
+### Forward Model (This Branch)
 Converts structured payment data into natural, customer-friendly language:
 
 **Input:**
 ```
-inform(transaction_type[payment], amount[1500.00], currency[USD], 
-       sender[Acme Corp], receiver[Global Supplies Inc], 
+inform(transaction_type[payment], amount[1500.00], currency[USD],
+       sender[Acme Corp], receiver[Global Supplies Inc],
        status[completed], method[ACH], date[2024-10-27])
 ```
 
 **Output:**
 ```
-Your ACH payment of $1,500.00 to Global Supplies Inc was 
+Your ACH payment of $1,500.00 to Global Supplies Inc was
 successfully completed on October 27, 2024.
 ```
+
+### Reverse Model (See reverse-structured-extraction Branch)
+Extracts structured metadata from natural language payment descriptions:
+
+**Input:**
+```
+Your payment of USD 1,500.00 to Global Supplies Inc via
+wire transfer was successfully completed on 2024-10-27.
+```
+
+**Output:**
+```
+inform(transaction_type[payment], amount[1500.00], currency[USD],
+       receiver[Global Supplies Inc], status[completed],
+       method[wire_transfer], date[2024-10-27])
+```
+
+👉 **For reverse model documentation**, switch to the `reverse-structured-extraction` branch and see README_REVERSE.md.
 
 ## 📋 Prerequisites
 
@@ -425,5 +448,51 @@ Having issues? Check:
 2. [PyTorch CUDA installation](https://pytorch.org/get-started/locally/)
 3. [Transformers documentation](https://huggingface.co/docs/transformers)
 4. [NVIDIA CUDA toolkit](https://developer.nvidia.com/cuda-downloads)
+
+## 📁 Repository Structure
+
+```
+phi3-tune-payments/
+├── README.md                          # This file (Forward model)
+│
+├── generate_payments_dataset.py       # Dataset generator (forward)
+├── finetune_phi3_payments.py         # Training script (forward)
+├── test_payments_model.py            # Testing script (forward)
+│
+├── payments_dataset/                  # Generated forward dataset
+│   ├── train.json
+│   ├── validation.json
+│   └── test.json
+│
+└── phi3-payments-finetuned/          # Fine-tuned forward model
+```
+
+### Reverse Model (Separate Branch)
+
+The reverse model files are in the `reverse-structured-extraction` branch:
+
+```
+reverse-structured-extraction branch:
+├── README_REVERSE.md                  # Reverse model documentation
+├── generate_reverse_dataset.py       # Dataset generator (reverse)
+├── finetune_phi3_reverse.py          # Training script (reverse)
+├── test_reverse_model.py             # Testing script (reverse)
+├── reverse_payments_dataset/          # Generated reverse dataset
+└── phi3-payments-reverse-finetuned/  # Fine-tuned reverse model
+```
+
+### Branch Information
+
+- **master** (main branch): Forward model implementation (this branch)
+- **reverse-structured-extraction**: Reverse model implementation
+
+To switch between models:
+```bash
+# Use forward model (current)
+git checkout master
+
+# Use reverse model
+git checkout reverse-structured-extraction
+```
 
 ---
